@@ -152,6 +152,5 @@
 		margin-right: auto;
 	}
 
-	/*footer styling*/
 	
 </style>
