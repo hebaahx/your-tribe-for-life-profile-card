@@ -1,12 +1,13 @@
 <script>
+    import Header from '$lib/components/Header.svelte';
     import Footer from '$lib/components/Footer.svelte';
-	let { data } = $props();
+	
+    let { data } = $props();
     const mugshotUrl = `https://fdnd.directus.app/assets/${data.person.mugshot_year2}`;
 </script>
 
-<header>
+<Header />
 
-</header>
 
 <main>
     <section class="profile-card">
