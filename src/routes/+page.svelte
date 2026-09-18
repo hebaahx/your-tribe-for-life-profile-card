@@ -1,4 +1,5 @@
 <script>
+    import Footer from '$lib/components/Footer.svelte';
 	let { data } = $props();
     const mugshotUrl = `https://fdnd.directus.app/assets/${data.person.mugshot_year2}`;
 </script>
@@ -46,7 +47,7 @@
     </section>    
 </main>
 
-<footer></footer>
+<Footer githubHandle= {data.person.github_handle}/>
 
 <style>
 :root {
