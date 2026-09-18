@@ -78,8 +78,9 @@
 	.profile-card {
 		background: var(--color-card);
 		border-radius: 25px;
-		padding: 2rem;
-		max-width: 350px;
+		padding: 2.5rem 2rem;
+        min-height: 400px;
+		max-width: 300px;
 		width: 100%;
 		text-align: center;
 		box-shadow: 0 8px 24px var(--color-primary);
@@ -96,19 +97,19 @@
 
 	h1 {
 		margin: 0;
-		font-size: 1.5rem;
+		font-size: 1.6rem;
 		color: var(--color-primary);
 	}
 
 	.profile-bio {
-		font-size: 1rem;
+		font-size: 1.2rem;
 		color: var(--color-primary);
 		font-weight: 600;
-		margin: 0.2rem 0 0.3rem;
+		margin: 0.3rem 0 0.7rem;
 	}
 
 	.profile-info {
-		font-size: 0.9rem;
+		font-size: 1rem;
 		color: var(--color-text-muted);
 		line-height: 1.5;
 		margin: 0 0 1.5rem;
@@ -117,14 +118,15 @@
 	.interest-list {
 		display: flex;
 		justify-content: center;
-		gap: 10px;
+		gap: 20px;
 		flex-wrap: wrap;
+        margin-top: 3rem;
 	}
 
 	.interest-tag {
 		background: var(--color-accent);
 		border-radius: 20px;
-		padding: 6px 14px;
+		padding: 8px 20px;
 	}
 
 	.interest-tag summary {
@@ -138,8 +140,8 @@
 	}
 
 	.tag-icon {
-		width: 14px;
-		height: 14px;
+		width: 16px;
+		height: 16px;
 	}
 
 	.popover-image {
