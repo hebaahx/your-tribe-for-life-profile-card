@@ -60,18 +60,28 @@
 		--color-text-muted: #7a6580;
 	}
 
+    :global(*) {
+	    box-sizing: border-box;
+    }
+
 	:global(body) {
 		background: var(--color-background);
 		margin: 0;
 		font-family: system-ui, sans-serif;
 		color: var(--color-text);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
 	}
 
     /*header styling*/
 
 	main {
 		display: flex;
+        flex: 1;
 		justify-content: center;
+        align-items: flex-start;
 		padding: 2rem;
 	}
 
@@ -79,7 +89,6 @@
 		background: var(--color-card);
 		border-radius: 25px;
 		padding: 2.5rem 2rem;
-        min-height: 400px;
 		max-width: 300px;
 		width: 100%;
 		text-align: center;
