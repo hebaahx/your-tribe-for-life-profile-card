@@ -72,7 +72,7 @@
         height: 100vh;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        overflow: auto;
 	}
 
     /*header styling*/
@@ -163,6 +163,57 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+    @media (min-width: 768px) {
+        main {
+            padding: 1.5rem 2rem;
+        }
+
+        .profile-card {
+            max-width: 590px;
+            padding: 2.5rem;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0.7rem;
+        }
+
+        .interest-list {
+            margin-top: 1.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        main {
+            padding: 1.5rem 2rem;
+        }
+
+        .profile-card {
+            max-width: 600px;
+            padding: 1.5rem 2rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .profile-bio {
+            font-size: 1rem;
+            margin: 0.3rem 0 0.5rem;
+        }
+
+        .profile-avatar {
+            width: 110px;
+            height: 110px;
+            margin: 0.5rem;
+        }
+    }
 
 	
 </style>
