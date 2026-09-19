@@ -1,42 +1,57 @@
-# sv
+# Your Tribe for Life – Profile Card
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Een digitaal visitekaartje gebouwd met SvelteKit, met data uit de FDND Directus database. Live te bekijken op: https://celadon-malasada-fa5e9c.netlify.app/
 
-## Creating a project
+## Inhoud
+- Project setup
+- Data ophalen
+- HTML structuur
+- Componenten
+- Styling
+- Responsive design
+- Deployment
 
-If you're seeing this, you've probably already done this step. Congrats!
+### Project setup
+Het project is opgezet met Sveltekit:
 
-```sh
-# create a new project
-npx sv create my-app
-```
+Gekozen instellingen:
+- Template: SvelteKit minimal
+- Type checking: No (gewoon JavaScript)
+- Extra tools (Prettier, ESLint, etc.): geen toegevoegd
+Development server starten: npm install , npm run dev
 
-To recreate this project with the same configuration:
+### Data ophalen
+De profieldata komt uit de FDND Directus API. Dit gebeurt via een load-functie in het bestand **+page.server.js**:
+https://github.com/hebaahx/your-tribe-for-life-profile-card/blob/a12d67eb7dd1e06eb7f16ab466f5026c08bc45e6/src/routes/%2Bpage.server.js#L1-L11
+In **+page.svelte** wordt de data binnengehaald met:
+https://github.com/hebaahx/your-tribe-for-life-profile-card/blob/a12d67eb7dd1e06eb7f16ab466f5026c08bc45e6/src/routes/%2Bpage.svelte#L5
 
-```sh
-# recreate this project
-npx sv@0.17.0 create --template minimal --no-types --install npm .
-```
+### HTML structuur
+De pagina is semantisch opgebouwd:
+- <header> — bevat het logo (los component)
+- <main> — bevat de kern van de pagina: de profielkaart met naam, bio en interesse-tags
+- <footer> — bevat de links naar socials (los component)
+De interesse-tags (Amsterdam, Egypte, Muziek, Code) zijn gebouwd met het native HTML <details>/<summary> element. Dit klapt open/dicht bij een klik, volledig zonder JavaScript. De basisfunctionaliteit werkt altijd, ook als CSS of JS niet laadt.
 
-## Developing
+### Componenten
+Herbruikbare onderdelen staan als losse Svelte componenten in `src/lib/components`:
+- **Header.svelte** — toont het logo, klikbaar naar een externe link
+- **Footer.svelte** — toont links naar GitHub, LinkedIn en e-mail; de GitHub-link wordt automatisch gevuld vanuit de database
+  
+### Styling
+De kleuren zijn vastgelegd als CSS-variabelen op :root
+https://github.com/hebaahx/your-tribe-for-life-profile-card/blob/a12d67eb7dd1e06eb7f16ab466f5026c08bc45e6/src/routes/%2Bpage.svelte#L54-L61
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Responsive design
+Het project is mobile-first opgebouwd: de basisstijl is geschreven voor de kleinste schermen, en @media breakpoints voegen daar bovenop aanpassingen toe voor grotere schermen:
+- @media (min-width: 768px) — tablet
+- @media (min-width: 1024px) — desktop
+Op grotere schermen wordt onder andere de padding en tekst grootte verkleind, zodat alles zonder scrollen op één scherm past.
 
-```sh
-npm run dev
+### Deployment
+Het project is live gezet via Netlify, gekoppeld aan de GitHub-repository. Dit zorgt ervoor dat de site de hele tijd up to date is. 
+- GitHub repository: https://github.com/hebaahx/your-tribe-for-life-profile-card/tree/main
+- Live URL: https://celadon-malasada-fa5e9c.netlify.app/
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+### Licentie
+Dit project is gelicenseerd onder de MIT-licentie (zie LICENSE).
